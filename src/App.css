@@ -1,5 +1,6 @@
 header {
   background-color: floralwhite;
+  margin-bottom: 0%;
 }
 h1 {
   text-align: center;
@@ -29,5 +30,46 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #04aa6d;
+  background-color: darkcyan;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 60%;
+  height: auto;
+  text-align: center;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+.input_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.input_box label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-left: 30px;
+  display: block;
+  width: 30%;
+  text-align: left;
+}
+
+.input_box input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 60%;
+  max-width: 100%;
+}
+.button__actions button {
+  width: 30%;
+  background-color: darkcyan;
+  border-radius: 20px;
+  text-align: center;
 }

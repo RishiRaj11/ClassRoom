@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
   const [userType, setUserType] = useState("student");
+  const [submitStatus, setSubmitStatus] = useState(false);
   const emailHandler = (e) => {
     setEmail(e.target.value);
   };
@@ -40,6 +43,7 @@ const Login = () => {
       cpassword: cpassword,
       userType: userType,
     };
+   setSubmitStatus(true)
     console.log(userData);
   };
 
@@ -94,7 +98,8 @@ const Login = () => {
           </select>
         </div>
         <div className="button__actions">
-          <button type="submit">Login</button>
+          {submitStatus ? (<Link to="/class"><button type="submit">Login</button></Link>):<button type="submit">Login</button>}
+          
         </div>
       </form>
     </div>

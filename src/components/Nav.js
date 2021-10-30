@@ -1,18 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../App.css"
+import { NavLink } from "react-router-dom";
+import "../App.css";
 const Nav = () => {
   return (
     <div>
       <ul>
         <li className="active">
-          <Link to="/home">Home</Link>
+          <NavLink to="/home" activeClassName="active">Home</NavLink>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <NavLink to="/login" activeClassName="active" >Login</NavLink>
         </li>
         <li>
-          <Link to="/signup">SignUp</Link>
+          <NavLink to="/signup" activeClassName="active" >SignUp</NavLink>
+        </li>
+
+        <li style={{ float: "right" }}>
+          <NavLink to="/logout">LogOut</NavLink>
+        </li>
+        <li style={{ float: "right" }}>
+          <NavLink to="/class">Student</NavLink>
         </li>
       </ul>
     </div>

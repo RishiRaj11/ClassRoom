@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -7,7 +7,7 @@ const SignUp = () => {
   const [cpassword, setCpassword] = useState("");
   const [phone, setPhone] = useState("");
   const [userType, setUserType] = useState("student");
-
+  const [signUpStatus, setSignUpStatus] = useState(false);
   const nameHandler = (e) => {
     setName(e.target.value);
   };
@@ -45,7 +45,7 @@ const SignUp = () => {
       alert("password and conform password are not matching");
     } else if (phone.length !== 10) {
       alert("phone number must be of 10 digits");
-    } else if (userType==="") {
+    } else if (userType === "") {
       alert("please select user type");
     }
     const userData = {
@@ -56,6 +56,7 @@ const SignUp = () => {
       phone: phone,
       userType: userType,
     };
+    setSignUpStatus(true);
     console.log(userData);
   };
 
@@ -131,13 +132,18 @@ const SignUp = () => {
             <b>Choose user type</b>
           </label>
           <select value={userType} onChange={userTypeHandler}>
-           
             <option value="student">Student</option>
             <option value="teacher">Teacher</option>
           </select>
         </div>
         <div className="button__actions">
-          <button type="submit">SignUp</button>
+          {signUpStatus ? (
+            <Link to="/login">
+              <button type="submit">SignUp</button>
+            </Link>
+          ) : (
+            <button type="submit">SignUp</button>
+          )}
         </div>
       </form>
     </div>

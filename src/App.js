@@ -4,6 +4,7 @@ import SignUp from "./components/SignUp";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav";
+import ClassRoom from "./components/ClassRoom";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/class" component={ClassRoom} />
       </Switch>
     </div>
   );

@@ -6,19 +6,24 @@ const Nav = () => {
     <div>
       <ul>
         <li className="active">
-          <NavLink to="/home" activeClassName="active">Home</NavLink>
+          <NavLink to="/home" activeClassName="active">
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/login" activeClassName="active" >Login</NavLink>
+          <NavLink to="/login" activeClassName="active">
+            Login
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/signup" activeClassName="active" >SignUp</NavLink>
+          <NavLink to="/signup" activeClassName="active">
+            SignUp
+          </NavLink>
         </li>
 
         <li style={{ float: "right" }}>
-          <NavLink to="/logout">LogOut</NavLink>
+          <NavLink to="/home">LogOut</NavLink>
         </li>
-       
       </ul>
     </div>
   );

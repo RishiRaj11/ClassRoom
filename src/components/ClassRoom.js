@@ -11,9 +11,10 @@ const ClassRoom = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(assign);
+    localStorage.setItem("Assignment", assign);
   };
   return (
-    <div >
+    <div>
       <div className="card">
         <h1>Welcome to ClassRoom</h1>
         <h3>Upload Assignment</h3>
@@ -23,19 +24,29 @@ const ClassRoom = () => {
             onChange={textHandler}
           ></textarea>
           <br /> <br />
-          <input type="submit" value="Submit" /><br /><br />
+          <input type="submit" value="Submit" />
+          <br />
+          <br />
         </form>
-      </div><br />
+      </div>
+      <br />
       <div className="card">
-      <h2>Student List</h2>
-      <table>
-      <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Status</th>
-      </tr>
-      <br /><br />
-      </table>
+        <h2> Submitted Student List</h2>
+        <table>
+          <tr>
+            <th>Submitted Answer</th>
+          </tr>
+          <br />
+          <br />
+
+          {localStorage.getItem("submittedAssign") ? (
+            <tr>
+              <td>{localStorage.getItem("submittedAssign")}</td>
+            </tr>
+          ) : (
+            ""
+          )}
+        </table>
       </div>
     </div>
   );

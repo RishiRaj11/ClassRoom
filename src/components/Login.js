@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,6 +21,9 @@ const Login = () => {
 
   const userTypeHandler = (e) => {
     setUserType(e.target.value);
+    if (e.target.value.length > 5) {
+      setSubmitStatus(true);
+    }
   };
 
   const submitHandler = (e) => {
@@ -43,7 +45,7 @@ const Login = () => {
       cpassword: cpassword,
       userType: userType,
     };
-   setSubmitStatus(true)
+
     console.log(userData);
   };
 
@@ -98,8 +100,15 @@ const Login = () => {
           </select>
         </div>
         <div className="button__actions">
-          {submitStatus ? (<Link to="/class"><button type="submit">Login</button></Link>):<button type="submit">Login</button>}
-          
+          {submitStatus && userType === "teacher" ? (
+            <Link to="/class">
+              <button type="submit">Login</button>
+            </Link>
+          ) : (
+            <Link to="/sclass">
+              <button type="submit">Login</button>
+            </Link>
+          )}
         </div>
       </form>
     </div>

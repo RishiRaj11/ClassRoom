@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,6 +26,9 @@ const SignUp = () => {
 
   const phoneHandler = (e) => {
     setPhone(e.target.value);
+    if (e.target.value.length === 10) {
+      setSignUpStatus(true);
+    }
   };
 
   const userTypeHandler = (e) => {
@@ -56,7 +60,6 @@ const SignUp = () => {
       phone: phone,
       userType: userType,
     };
-    setSignUpStatus(true);
     console.log(userData);
   };
 

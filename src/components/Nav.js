@@ -18,9 +18,7 @@ const Nav = () => {
         <li style={{ float: "right" }}>
           <NavLink to="/logout">LogOut</NavLink>
         </li>
-        <li style={{ float: "right" }}>
-          <NavLink to="/class">Student</NavLink>
-        </li>
+       
       </ul>
     </div>
   );
